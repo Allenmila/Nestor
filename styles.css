@@ -38,7 +38,7 @@ nav {
   position: fixed;
   isolation: isolate;
   width: 100%;
-  z-index: 9;
+  z-index: 20;
 }
 
 .nav__header {
