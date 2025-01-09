@@ -563,6 +563,7 @@ nav {
   position: static !important;
   transform: translate(0,0);
   margin: 10px !important;
+  z-index: 1;
 }
 .service-slides-btns{
   display: flex;
