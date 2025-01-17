@@ -77,3 +77,5 @@ ScrollReveal().reveal(".header__image__card", {
           },
         },
       });
+
+      
