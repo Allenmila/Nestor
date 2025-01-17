@@ -277,21 +277,7 @@ nav {
 .header__content button:hover {
   background-color: var(--primary-color-dark);
 }
-.btnst{
-  display: flex;
-  width: 500px;
-  justify-content: flex-start;
-  margin-top: 20px;
-  margin-left: 20px;
-}
 
-.btnst button{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-right: 20px;
-}
 
 /* service */
 .service{
