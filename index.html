@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"rel="stylesheet"/>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="css/styles.css" />
     <link rel="shortcut icon" href="assets/logo .jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
      <!-- Link Swiper's CSS -->
@@ -23,14 +23,14 @@
       </div>
       <ul class="nav__links" id="nav-links">
         <li><a href="#">HOME</a></li>
-        <li><a href="#">STORE</a></li>
+        <li><a href="pages/store.html">STORE</a></li>
         <li><a href="#">BLOG</a></li>
         <li><a href="#our-story">ABOUT US</a></li>
         <li><a href="#why-choose-us">CONTACT</a></li>
       </ul>
       <div class="nav__btns">
-        <button class="btn sign__up">Sign Up</button>
-        <button class="btn sign__in">Sign In</button>
+        <!-- <a href="pages/signup.html"> <button class="btn sign__up">Sign Up</button></a> -->
+       <a href="pages/signin.html"> <button class="btn sign__in">Sign In</button></a>
       </div>
     </nav>
     <header class="header__container">
@@ -51,15 +51,15 @@
           <span><i class="fas fa-truck-medical"></i></span>
           Emergency Transport
         </div>
-        <img src="assets/land.png" alt="header" />
+        <img src="assets/landing.png" alt="header" />
       </div>
       <div class="header__content">
         <h1>LET'S GO!<br />WE'RE<span> NETSOR</span> EVERY STEP OF THE WAY</h1>
         <p>
           Transform Your Medical Logistics Today – Navigate the Path to Efficiency and Excellence with Cutting-Edge Solutions, Reliable Deliveries, and Seamless Coordination
         </p>
-        <form action="#">
-          <div class="input__row">
+        <div class="input__container">
+          <!-- <div class="input__row">
             <div class="input__group">
               <h5>Product</h5>
               <div>
@@ -73,14 +73,10 @@
                 <span><i class="ri-map-pin-line"></i></span>
                 <input type="text" placeholder="Accra, Ghana" />
               </div>
-            </div>
+            </div> -->
+            <a href="#"><button>Sign Up</button></a>
           </div>
-          <button type="#">Search</button>
-        </form>
-        <!-- <div class="btnst">
-          <button class="btn log">Sign Up</button>
-          <button class="btn sign">Sign In</button>
-        </div> -->
+        </div>
       </div>
     </header>
     <!-- header ends -->
@@ -164,9 +160,9 @@
             </div>
           </div>
         </section>
-        <!-- end -->
 
-      <!-- Our service -->
+
+        <!-- Our service -->
        <section id="our-service">
         <div class="service-heading">
            <div class="sh-text">
@@ -174,7 +170,7 @@
             <h2>High Quality Services For You</h2>
            </div>
            <!-- btns -->
-            <div class="service-slides-btns">
+            <div class="service-slides-btns"> 
               <div class="swiper-button-prev"></div>
               <div class="swiper-button-next"></div>
             </div>
@@ -504,11 +500,11 @@
                   </div>
                   <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi, impedit perspiciatis</p>
                   <div class="footer-social">
-                    <a href="#" class="f"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="i"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="y"><i class="fab fa-youtube"></i></a>
-                    <a href="#"class="x"><i class="fab fa-x-twitter"></i></a>
-                    <a href="#" class="w"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#https://web.facebook.com/?_rdc=1&_rdr" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#https://www.instagram.com/" class="i"><i class="fab fa-instagram"></i></a>
+                    <a href="#https://www.youtube.com/" class="y"><i class="fab fa-youtube"></i></a>
+                    <a href="#https://x.com/?lang=en&mx=2"class="x"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#https://www.whatsapp.com/" class="w"><i class="fab fa-whatsapp"></i></a>
                   </div>
                 </div>    
                 <!-- company box end -->
@@ -548,7 +544,7 @@
              </footer>
 
     <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="main.js"></script>
+    <script src="js/main.js"></script>
     <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <!-- swiper slider -->
