@@ -8,12 +8,12 @@
     <link rel="shortcut icon" href="assets/logo .jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <script src="js/bot.js" defer></script>
      <!-- Link Swiper's CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <script src="js/bot.js" defer></script>
     <title>HOME | NETSOR</title>
   </head>
-  <body>
+  <body class="home">
     <nav>
       <div class="nav__header">
         <div class="nav__logo">
@@ -25,17 +25,27 @@
       </div>
       <ul class="nav__links" id="nav-links">
         <li><a href="#">HOME</a></li>
-        <li><a href="pages/store.html">STORE</a></li>
+        <li><a href="#">STORE</a></li>
         <li><a href="#">BLOG</a></li>
         <li><a href="#our-story">ABOUT US</a></li>
         <li><a href="#why-choose-us">CONTACT</a></li>
       </ul>
       <div class="nav__btns">
-        <!-- <a href="pages/signup.html"> <button class="btn sign__up">Sign Up</button></a> -->
-       <a href="pages/signin.html"> <button class="btn sign__in">Sign In</button></a>
+        <div class="login-card"> 
+        <h3>Login As</h3>
+        <div class="login-card-content">
+          <ul class="user-type">
+            <li><a href="pages/signin.html">User</a></li>
+            <li><a href="pages/signin.html">Rider</a></li>
+            <li><a href="pages/signin.html">Health Facility</a></li>
+            <!-- <li><a href="pages/signin.html">Sales</a></li> -->
+          </ul>
+        </div>
+      </div>
+       <button class="btn sign__in">Sign In</button></a>
       </div>
     </nav>
-  <div>
+  <div class="home">
     <!-- chatbot -->
     <button class="chatbot-toggler">
       <span class="material-symbols-outlined">mode_comment</span>
@@ -57,20 +67,6 @@
           <span id="send-btn" class="material-symbols-outlined">send</span>
         </div>
     </div>
-  </div>
-  <!-- login card -->
-  <div class="login-card"> 
-    <i class="fas fa-xmark card-close"></i>
-    <div class="login-card-content">
-      <h2>Login As</h2>
-      <ul class="user-type">
-        <li><a href="#">User</a></li>
-        <li><a href="#">Rider</a></li>
-        <li><a href="#">Health Facility</a></li>
-        <!-- <li><a href="pages/signin.html">Sales</a></li> -->
-      </ul>
-    </div>
-  </div>
     <!-- header -->
     <header class="header__container">
       <div class="header__image">
@@ -98,12 +94,39 @@
           Transform Your Medical Logistics Today – Navigate the Path to Efficiency and Excellence with Cutting-Edge Solutions, Reliable Deliveries, and Seamless Coordination
         </p>
         <div class="input__container">
-            <a href="pages/signin.html"><button>Sign Up</button></a>
+          <div class="login-card"> 
+            <h3>Login As</h3>
+            <div class="login-card-content">
+              <ul class="user-type">
+                <li><a href="pages/signin.html">User</a></li>
+                <li><a href="pages/signin.html">Rider</a></li>
+                <li><a href="pages/signin.html">Health Facility</a></li>
+                <!-- <li><a href="pages/signin.html">Sales</a></li> -->
+              </ul>
+            </div>
           </div>
+           <button class="btn" type="button">Sign Up</button>
         </div>
       </div>
     </header>
     <!-- header ends -->
+   <!-- read more popup box start -->
+   <div class="popup-box" id="popup">
+    <div class="popup-content">
+        <div class="popup-header">
+           <h3></h3>
+           <span class="popup-close-icon">&times;</span>
+        </div>
+        <div class="popup-body">
+          
+        </div>
+        <div class="popup-footer">
+          <button class="btn popup-close-btn">Close</button>
+        </div>
+    </div>
+ </div>
+<!-- read more popup box end -->
+
      <!-- what we do -->
       <section class="service">
         <!-- box 1 -->
@@ -207,36 +230,72 @@
                 <div class="swiper-slide">
                   <div class="service-box sb-1">
                     <i class="fas fa-capsules"></i>
-                    <strong>Medical Supplies & Deliveries</strong>
+                    <h3>Medical Supplies & Deliveries</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur</p>
-                    <a href="#">Read More</a>
+                    <div class="read-more-cont">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.</p>
+                   </div>
+                   <button type="button" class="btn">Read More</button>
                  </div>
                 </div>   
                 <!-- slider 2 -->
                 <div class="swiper-slide">
                   <div class="service-box sb-2">
                     <i class="fas fa-truck-fast"></i>
-                    <strong>Cold Chain Logistics</strong>
+                    <h3>Cold Chain Logistics</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur</p>
-                    <a href="#">Read More</a>
+                    <div class="read-more-cont">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.</p>
+                   </div>
+                   <button type="button" class="btn">Read More</button>
                  </div>
                 </div> 
                 <!-- slider 3 -->
                 <div class="swiper-slide">
                   <div class="service-box sb-3">
                     <i class="fas fa-truck-medical"></i>
-                    <strong>Emergency Transport Solutions</strong>
+                    <h3>Emergency Transport Solutions</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur</p>
-                    <a href="#">Read More</a>
+                    <div class="read-more-cont">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.</p>
+                   </div>
+                   <button type="button" class="btn">Read More</button>
                  </div>
                 </div>   
                 <!-- slider 4 -->
                 <div class="swiper-slide">
                   <div class="service-box sb-4">
                     <i class="fas fa-prescription-bottle-medical"></i>
-                    <strong>Pharmaceutical Distributions</strong>
+                    <h3>Pharmaceutical Distributions</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur</p>
-                    <a href="#">Read More</a>
+                    <div class="read-more-cont">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.</p>
+                   </div>
+                    <button type="button" class="btn">Read More</button>
                  </div>
                 </div>                             
               </div>
@@ -568,9 +627,10 @@
                 <span>&copy;Copyright 2025 - NETSOR</span>
                </div>
              </footer>
-
+  </div>
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="js/main.js"></script>
+    <script src="js/script.js"></script>
     <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <!-- swiper slider -->
