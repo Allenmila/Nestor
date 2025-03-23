@@ -1,100 +1,1003 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <style>
-      h1{
-        color: #ff833e;
-        text-align: center;
-      }
-    </style>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"rel="stylesheet"/>
-    <link rel="stylesheet" href="css/styles.css" />
-    <link rel="shortcut icon" href="assets/logo .jpg">
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="shortcut icon" href="assets/image/logo .jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <script src="assets/js/bot.js" defer></script>
      <!-- Link Swiper's CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <title>HOME | NETSOR</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --primary-color: #ff833e;
+  --primary-color-dark: #db6f35;
+  --text-dark: #333333;
+  --text-light: #767268;
+  --white: #ffffff;
+  --max-width: 1200px; 
+  --header-font: "Bebas Neue", sans-serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: flex;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+ul{
+  list-style: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+nav {
+  position: fixed;
+  isolation: isolate;
+  width: 100%;
+  z-index: 20;
+}
+
+.nav__header {
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--primary-color);
+}
+
+.nav__logo a {
+  font-size: 1.75rem;
+  font-weight: 400;
+  font-family: var(--header-font);
+  color: var(--white);
+}
+
+.nav__menu__btn {
+  font-size: 1.5rem;
+  color: var(--white);
+  cursor: pointer;
+}
+
+.nav__links {
+  position: absolute;
+  top: 64px;
+  left: 0;
+  width: 100%;
+  padding: 2rem;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: var(--primary-color);
+  transition: 0.5s;
+  z-index: -1;
+  transform: translateY(-100%);
+}
+
+.nav__links.open {
+  transform: translateY(0);
+}
+
+.nav__links a {
+  font-weight: 500;
+  color: var(--white);
+}
+
+.nav__links a:hover {
+  color: var(--text-dark);
+}
+
+.nav__btns {
+  display: none;
+}
+
+
+.chat-input span{
+  align-self: flex-end;
+  color: var(--primary-color);
+  font-size: 1.35rem;
+  cursor: pointer;
+  height: 55px;
+  line-height: 55px;
+  visibility: hidden;
+}
+
+.chat-input textarea:valid ~ span{
+  visibility: visible;
+}
+.header__container {
+  max-width: var(--max-width);
+  margin: auto;
+  padding-block: 8rem 2rem;
+  padding-inline: 1rem;
+  display: grid;
+  gap: 2rem;
+  overflow-x: hidden;
+  padding-top: 170px;
+}
+
+.header__image {
+  position: relative;
+  isolation: isolate;
+}
+
+.header__image::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  max-width: 550px;
+  aspect-ratio: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url("../assets/header-bg.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border-radius: 100%;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.header__image img {
+  max-width: 520px;
+  margin-inline: auto;
+}
+
+.header__image__card {
+  position: absolute;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  background-color: var(--white);
+  white-space: nowrap;
+  border-radius: 5px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.header__image__card span {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.header__image__card-1 {
+  top: 25%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+}
+
+.header__image__card-2 {
+  top: 10%;
+  right: 2rem;
+  transform: translateY(-50%);
+}
+
+.header__image__card-3 {
+  top: 60%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.header__image__card-4 {
+  top: 70%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.header__content h1 {
+  margin-bottom: 1rem;
+  font-size: 5rem;
+  font-weight: 400;
+  font-family: var(--header-font);
+  color: var(--text-dark);
+  line-height: 5.5rem;
+  text-align: center;
+}
+
+.header__content h1 span {
+  color: var(--primary-color);
+}
+
+.header__content p {
+  margin-bottom: 2rem;
+  columns: var(--text-light);
+  line-height: 1.75rem;
+  text-align: center;
+}
+
+.header__content form {
+  margin-bottom: 4rem;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 1rem 0;
+  border-radius: calc(1rem + 10px);
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.header__content .input__row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+.header__content .input__group {
+  flex: 1;
+}
+
+.header__content .input__group h5 {
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-light);
+}
+
+.header__content .input__group > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header__content input {
+  width: 100%;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  background-color: transparent;
+}
+
+.header__content input::placeholder {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.header__content .input__group span {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.input__container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input__container button {
+  width: 100%;
+  padding: 1rem 2rem;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  white-space: nowrap;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  color: var(--white);
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.input__container button:hover {
+  background-color: var(--primary-color-dark);
+}
+
+/* login card */
+.login-card{
+  position: absolute;
+  width: 100%;
+  padding: 25px;
+  display: none;
+}
+.login-card-content h3{
+  font-size: 1.2rem;
+  color: #333333;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.login-card-content .user-type{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}up-box .popup-content{
+	background-color: #ffffff;
+	width: 600px;
+	position: absolute;
+	left: 50%;
+	top:50%;
+	transform: translate(-50%,-50%);
+	border-radius: 8px;
+}
+
+.popup-box .popup-header{
+	padding: 15px 40px 15px 15px;
+	border-bottom: 1px solid #dddddd;
+}
+.popup-box .popup-header h3{
+	margin:0;
+	color:#333333;
+	font-size: 20px;
+}
+.popup-box .popup-header .popup-close-icon{
+	position: absolute;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    color: #555555;
+    font-size: 28px;
+    line-height: 30px;
+    right: 5px;
+    top: 5px;
+    cursor: pointer;
+}
+.popup-box .popup-body{
+	padding: 15px;
+	max-height: 300px;
+	overflow-y: auto;
+}
+.popup-box .popup-body img{
+	width: 100%;
+	display: block;
+	margin-top: 15px;
+}
+.popup-box .popup-body p{
+	font-size: 16px;
+	color:#555555;
+	margin:0 0 15px;
+}
+.popup-box .popup-body .user-type{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+.popup-box .popup-body .user-type li{
+  font-size: 0.9rem;
+  width: 80%;
+  background: var(--primary-color);
+  border-radius: 12px;
+}
+.popup-box .popup-body .user-type li a{
+  display: block;
+  padding: 10px;
+  text-align: center;
+  color: #ffffff;
+  border-radius: 5px;
+  font-weight: 600;
+}
+.popup-box .popup-footer{
+	padding: 15px;
+	border-top:1px solid #dddddd;
+	text-align: right;
+}
+.popup-box .popup-footer .btn{
+	padding: 8px 15px;
+  border: none;
+	color:#ffff;
+  font-weight: 600;
+	font-size: 16px;
+	background-color: var(--primary-color);
+	cursor: pointer;
+	border-radius: 4px;
+}
+.popup-box .popup-footer .btn:focus{
+	outline: none;
+}
+/* service */
+.service{
+  max-width: var(--max-width);
+  width: 90%;
+  margin: 50px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.s-info-box{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.s-info-icon{
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 15px;
+  font-size: 1.4rem;
+  background-color: var(--primary-color);
+  border-radius: 5px;
+}
+.s-info-box1 .s-info-icon{
+  background-color: #ff833e;
+}
+.s-info-box2 .s-info-icon{
+  background-color: #bbff3e;
+}
+.s-info-box3 .s-info-icon{
+  background-color: #3ee2ff;
+}
+.s-info-box4 .s-info-icon{
+  background-color: #b23eff;
+}
+.s-info-text{
+  display: flex;
+  flex-direction: column;
+}
+.s-info-text strong{
+  color: #2e3038;
+  font-weight: 700;
+}
+.s-info-text p{
+  color: #68656577;
+  font-size: 0.9rem;
+  letter-spacing: 0.3px;
+}
+/* our story */
+#our-story{
+  background-color: #e4f5f4e5;
+  max-width: var(--max-width);
+  width: 90%;
+  margin: 80px auto;
+  border: 10px solid #ffff;
+  box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.12);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+#our-service{
+  width: 100%;
+  background-color: #fceddc;
+  margin: 50px auto 0px auto;
+  padding: 50px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.service-heading{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: var(--max-width);
+  width: 90%;
+  margin: auto;
+} 
+.sh-text strong{
+  color: var(--primary-color);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.sh-text h2{
+  font-size: 2.2rem;
+  color: var(--text-dark);
+  font-weight: 700;
+  max-width: 600px; 
+}
+.sb-container{
+  max-width: var(--max-width); 
+  width: 90%;
+  margin: 40px auto;
+}
+.service-box{
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: flex-start;
+  max-width: 100%;
+  height: 300px;
+  border: 5px solid #ffff;
+  padding: 30px;
+}
+.service-box .read-more-cont{
+  display: none;
+}
+.service-box:hover{
+    border: 5px solid #f8973c;
+}
+.service-box i{
+  font-size: 2rem;
+  color: #533112;
+  width: 60px;
+  height: 60px;
+  border-radius:  5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.service-box h3{
+  color: #533112;
+  font-size: 1.4rem;
+  margin-top: 20px;
+}
+.service-box p{
+  color: #423a38;
+  font-size: 0.9rem;
+  line-height: 1.4rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.service-box button{
+  height: 45px;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  padding: 0px 20px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 5px;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+footer{
+  width: 100%;
+  background-color: #fbf8f5;
+}
+.f-container{
+  padding: 50px 0px;
+  max-width: var(--max-width);
+  width: 90%;
+  padding: 50px 0px;
+  margin: 0px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.f-company-box{
+  max-width: 330px;
+}
+.f-company-box p{
+  color: #585858;
+  margin: 5px 0px;
+  font-size: 0.9rem;
+  line-height: 1.4rem;
+  letter-spacing: 0.3px;
+}
+.footer-social{
+  display: flex;
+  align-items: center;
+ flex-wrap: wrap;
+}
+.footer-social a{
+  margin-top: 10px;
+  margin-right: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #e4e4e4;
+  color: #333333;
+  font-size: 0.9rem;
+  transition: all ease 0.3s;
+}
+.footer-social .f:hover{
+  background-color: #076ece;
+  color: #ffffff;
+}
+.footer-social .i:hover{
+  background-color: #dd482e;
+  color: #ffffff;
+}
+.footer-social .y:hover{
+  background-color: #f00a0a;
+  color: #ffffff;
+}
+.footer-social .x:hover{
+  background-color: #111111;
+  color: #ffffff;
+}
+.footer-social .w:hover{
+  background-color: #189618;
+  color: #ffffff;
+}
+.footer-link-box strong{
+  color: var(--primary-color);
+  font-size: 1.2rem; 
+  font-weight: 600;
+}
+.footer-link-box ul{
+  margin-top: 5px; 
+}
+.footer-link-box ul li a{
+  color: #585858;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  display: flex;
+  transition: all ease 0.3s;
+}
+.footer-link-box ul li a:hover{
+  color: var(--primary-color-dark);
+}
+.footer-link-box ul li a img{
+  width: 100px;
+  margin-right: 10px;
+  margin-top: -30px;
+}
+.f-bottom{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  grid-gap: 10px;
+  border-top: 1px solid #e9e9e9;
+  padding: 20px 0px;
+  max-width: var(--max-width);
+  width: 90%;
+  margin: auto;
+  flex-wrap: wrap;
+}
+.f-bottom span{
+  color: var(--text-dark);
+  font-size: 0.9rem;
+}
+/* responsiveness */
+@media(max-width:1050px) {
+  .service{
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+  }
+}
+@media (width > 950px) {
+  nav {
+    position: static;
+    padding-block: 2rem 0;
+    padding-inline: 1rem;
+    max-width: var(--max-width);
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .nav__header {
+    flex: 1;
+    padding: 0;
+    background-color: transparent;
+  }
+
+  .nav__logo a {
+    color: var(--text-dark);
+  }
+
+  .nav__logo a span {
+    color: var(--primary-color);
+  }
+
+  .nav__menu__btn {
+    display: none;
+  }
+
+  .nav__links {
+    position: static;
+    padding: 0;
+    flex-direction: row;
+    background-color: transparent;
+    transform: none;
+  }
+
+  .nav__links a {
+    padding-block: 5px;
+    color: var(--text-dark);
+    border-bottom: 4px solid transparent;
+  }
+
+  .nav__links a:hover {
+    border-color: var(--primary-color);
+  }
+
+  .nav__btns {
+    display: flex;
+    flex: 1;
+  }
+
+  .nav__btns .btn {
+    padding: 0.75rem 1.5rem;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    white-space: nowrap;
+    border-radius: 10px;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+
+  .sign__up {
+    color: var(--text-dark);
+    background-color: transparent;
+  }
+
+  .sign__up:hover {
+    color: var(--primary-color);
+  }
+
+  .sign__in {
+    color: var(--white);
+    background-color: var(--primary-color);
+  }
+
+  .sign__in:hover {
+    background-color: var(--primary-color-dark);
+  }
+
+  .header__container {
+    padding-block: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+
+  .header__image {
+    grid-area: 1/2/2/3;
+  }
+
+  .header__content :is(h1, p, .bar) {
+    text-align: left;
+  }
+  .btnst{
+    display: none;
+  }
+  .input__container{
+    max-width: 100px;
+  }
+  .input__container button{
+    width: 100%;
+  }
+}
+
+@media (width < 990px){
+  #our-story{
+    grid-template-columns: 1fr;
+  }
+  #os-img{
+    max-height: 200px;
+  }
+  #os-text{
+    padding: 30px;
+  }
+  .header__container{
+    width: 100%;
+  }
+  #why-choose-us{
+    grid-template-columns: 1fr;
+  }
+  #testimonials{
+    padding: 50px 0px;
+  }
+  .t-img{
+    margin-right: auto;
+  }
+  .t-img img{
+    width: 100%;
+  }
+  .t-content{
+    grid-template-columns: 1fr;
+  }
+  .f-container{
+    grid-template-columns: 1fr 1fr;
+    display: grid;
+    grid-gap: 40px;
+  }
+  .f-nav a {
+    color: var(--text-dark);
+  }
+
+  .f-nav a span {
+    color: var(--primary-color);
+  }
+  .popup-box .popup-content { 
+    width: 80%; /* Adjust the width for tablets */ 
+  }
+}
+@media (width > 1024px) {
+  .header__content form {
+    flex-direction: row;
+  }
+  .header__content button {
+    width: fit-content;
+  }
+}
+.request{
+    height: 450px;
+    width: 45%;
+    margin-top: 30px;
+    margin-left: 70px;
+    border: 1px solid black;
+    border-radius: 4px;
+    background-color: white;
+}
+
+
+    </style>
   </head>
-  <body>
+  <body class="home">
     <nav>
       <div class="nav__header">
         <div class="nav__logo">
-          <a href="#">NET<span>SOR</span></a>
+          <a href="#">NET<span>SOR</span>.</a>
         </div>
         <div class="nav__menu__btn" id="menu-btn">
           <span><i class="ri-menu-line"></i></span>
         </div>
       </div>
       <ul class="nav__links" id="nav-links">
-        <li><a href="#">HOME</a></li>
-        <li><a href="users page">STORE</a></li>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="new.html">STORE</a></li>
         <li><a href="#">BLOG</a></li>
         <li><a href="#our-story">ABOUT US</a></li>
         <li><a href="#why-choose-us">CONTACT</a></li>
       </ul>
-      <div class="nav__btns">
-        <a href="pages/signup.html"> <button class="btn sign__up">Sign Up</button></a>
-       <a href="pages/signin.html"> <button class="btn sign__in">Sign In</button></a>
-      </div>
-    </nav> <br>
-    <!DOCTYPE html>
-    <html lang="en">
+      <section id="request">
+        <div class="ride">
+            <div class="images">
+                <img src="" alt="">
+                <img src="" alt="">
+                <img src="" alt="">
+            </div>
+        </div>
+        <div class="location">
 
-    <body>
+        </div>
+      </section>
+<footer>
+    <div class="f-container">
+      <div class="f-company-box">
+        <div class="nav__logo f-nav">
+          <a href="#" class="nav__logo">NET<span>SOR.</span></a>
+        </div>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi, impedit perspiciatis</p>
+        <div class="footer-social">
+          <a href="#" class="f"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="i"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="y"><i class="fab fa-youtube"></i></a>
+          <a href="#"class="x"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" class="w"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>    
+      <!-- company box end -->
+       <!-- link -->
+        <div class="footer-link-box">
+          <strong>Main Link's</strong>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-link-box">
+          <strong>Policy Link's</strong>
+          <ul>
+            <li><a href="s.html">Terms</a></li>
+            <li><a href="t.html">Privacy Policy</a></li>
+            <li><a href="r.html">Refund Policy</a></li>
+            <li><a href="p.html">Purchase Policy</a></li>
+            <li><a href="c.html">Cookies</a></li>
+          </ul> 
+        </div>
+        <div class="footer-link-box">
+          <strong>Other Link's</strong>
+          <ul>
+            <li><a href="f.html"> FAQ</a></li>
+          </ul>
+        </div>
+        <!-- bottom -->
+    </div>
+    <div class="f-bottom">
+      <span>Developed By NETSOR</span>
+      <span>&copy;Copyright 2025 - NETSOR</span>
+     </div>
+   </footer>
+</div>
+<script src="https://unpkg.com/scrollreveal"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/script.js"></script>
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<!-- swiper slider -->
+<script>
+// service slider
+var swiper = new Swiper(".mySwiperservices", {
+slidesPerView: 1,
+spaceBetween: 10,
+pagination: {
+el: ".swiper-pagination",
+clickable: true,
+},
+navigation: {
+nextEl: ".swiper-button-next",
+prevEl: ".swiper-button-prev",
+},
+breakpoints: {
+700: {
+  slidesPerView: 2,
+  spaceBetween: 40,
+},
+1024: {
+  slidesPerView: 3,
+  spaceBetween: 20,
+},
+},
+});
 
-      <h1>OUR SERVICES</h1>
+// team slider
+var swiper = new Swiper(".mySwiperteam", {
+slidesPerView: 1,
+spaceBetween: 10,
+pagination: {
+el: ".swiper-pagination",
+clickable: true,
+},
+breakpoints: {
+560: {
+slidesPerView: 2,
+spaceBetween: 20,
+},
+950: {
+slidesPerView: 3,
+spaceBetween: 40,
+},
+1250: {
+slidesPerView: 4,
+spaceBetween: 50,
+},
+},
+});
 
-      <br> <br> <br>
-                     <footer>
-              <div class="f-container">
-                <div class="f-company-box">
-                  <div class="nav__logo f-nav">
-                    <a href="#" class="nav__logo">NET<span>SOR.</span></a>
-                  </div>
-                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi, impedit perspiciatis</p>
-                  <div class="footer-social">
-                    <a href="https://web.facebook.com/?_rdc=1&_rdr"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/" class="i"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.youtube.com/" class="y"><i class="fab fa-youtube"></i></a>
-                    <a href="https://x.com/home?lang=en"class="x"><i class="fab fa-x-twitter"></i></a>
-                    <a href="https://www.whatsapp.com/" class="w"><i class="fab fa-whatsapp"></i></a>
-                  </div>
-                </div>    
-                <!-- company box end -->
-                 <!-- link -->
-                  <div class="footer-link-box">
-                    <strong>Main Link's</strong>
-                    <ul>
-                      <li><a href="index.html">Home</a></li>
-                      <li><a href="index.html">About</a></li>
-                      <li><a href="index.html">Contact</a></li>
-                      <li><a href="services.html">Services</a></li>
-                      <li><a href="#">Blog</a></li>
-                    </ul>
-                  </div>
-                  <div class="footer-link-box">
-                    <strong>Policy Link's</strong>
-                    <ul>
-                      <li><a href="terms.html">Terms</a></li>
-                      <li><a href="privacy.html">Privacy Policy</a></li>
-                      <li><a href="refund.html">Refund Policy</a></li>
-                      <li><a href="purchase.html">Purchase Policy</a></li>
-                      <li><a href="cookies.html">Cookies</a></li>
-                    </ul> 
-                  </div>
-                  <div class="footer-link-box">
-                    <strong>Other Link's</strong>
-                    <ul>
-                      <li><a href="faq's.html"> FAQ</a></li>
-                    </ul>
-                  </div>
-                  <!-- bottom -->
-              </div>
-              <div class="f-bottom">
-                <span>Developed By NETSOR</span>
-                <span>&copy;Copyright 2025 - NETSOR</span>
-               </div>
-             </footer>
-    </body>
-    </html>
+// testimonials
+var swiper = new Swiper(".mySwipertesti", {
+pagination: {
+el: ".swiper-pagination",
+clickable: true,
+},
+});
+</script>
+</body>
+</html>
